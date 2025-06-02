@@ -9,7 +9,7 @@ window.onload = function(){
     canvas.width = janelaDoJogo.WIDTH;
     canvas.height = janelaDoJogo.HEIGHT;
 
-    const principal = document.querySelector('img');
+    const [principal,background] = document.querySelectorAll('img');
 
     const position = {
         x:0,
@@ -25,7 +25,8 @@ window.onload = function(){
             velocidade = -velocidade;
         }
 
-        context.clearRect(0,0,janelaDoJogo.WIDTH, janelaDoJogo.HEIGHT);
+        //context.clearRect(0,0,janelaDoJogo.WIDTH, janelaDoJogo.HEIGHT);
+        context.drawImage(background, 0, 0, canvas.width, canvas.height);
 
         context.strokeStyle = 'yellow';
         context.moveTo(0,0);
@@ -34,13 +35,12 @@ window.onload = function(){
         context.lineTo(0, janelaDoJogo.HEIGHT);
         context.stroke();
 
-        context.drawImage(principal, 0, 0);
+        context.drawImage(principal, position.x, position.y);
         console.log(principal.width, principal.height)
 
         window.requestAnimationFrame(frame);
     }
-
     window.requestAnimationFrame(frame);
-    console.log(context);
+    
 }
 
