@@ -12,8 +12,8 @@ window.onload = function(){
     const [principal,background] = document.querySelectorAll('img');
 
     const position = {
-        x:0,
-        y:0
+        x:janelaDoJogo.WIDTH / 2 - principal.width / 2,
+        y:110,
     };
 
     let velocidade = 1;
@@ -28,12 +28,12 @@ window.onload = function(){
         //context.clearRect(0,0,janelaDoJogo.WIDTH, janelaDoJogo.HEIGHT);
         context.drawImage(background, 0, 0, canvas.width, canvas.height);
 
-        context.strokeStyle = 'yellow';
-        context.moveTo(0,0);
-        context.lineTo(janelaDoJogo.WIDTH, janelaDoJogo.HEIGHT);
-        context.moveTo(janelaDoJogo.WIDTH, 0);
-        context.lineTo(0, janelaDoJogo.HEIGHT);
-        context.stroke();
+        //context.strokeStyle = 'yellow';
+        //context.moveTo(0,0);
+        //context.lineTo(janelaDoJogo.WIDTH, janelaDoJogo.HEIGHT);
+        //context.moveTo(janelaDoJogo.WIDTH, 0);
+        //context.lineTo(0, janelaDoJogo.HEIGHT);
+        //context.stroke();
 
         context.drawImage(principal, position.x, position.y);
         console.log(principal.width, principal.height)
