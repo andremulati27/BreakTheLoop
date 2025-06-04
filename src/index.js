@@ -1,21 +1,15 @@
 import { principalCharacter } from "./entidades/fighters/principalCharacter.js";
-import { Sprite } from "./entidades/Sprite.js";
 import { Cenario } from "./entidades/cenario.js";
-
-const janelaDoJogo = {
-    WIDTH: 1536,
-    HEIGHT: 1024,
-};
 
 window.addEventListener('load', function() {
     const canvas = document.querySelector('canvas');
     const context = canvas.getContext('2d');
 
-    canvas.width = janelaDoJogo.WIDTH;
-    canvas.height = janelaDoJogo.HEIGHT;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
     const player = new principalCharacter({
-        position: { x: 100, y: 300 }
+        position: { x: 200, y: 350 }
     });
 
     const entidades = [

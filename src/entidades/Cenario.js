@@ -9,7 +9,8 @@ export class Cenario {
 
     draw(context) {
         if (this.image && this.image.complete) {
-            context.drawImage(this.image, 0, 0);
+            context.drawImage(this.image, 0, 0, context.canvas.width, context.canvas.height
+            );
         }
     }
 }
