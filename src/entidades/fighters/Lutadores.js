@@ -5,6 +5,7 @@ export class lutadores extends Sprite {
         super({ position, imageSrc, scale, framesMax, offset });
         this.nome = nome;
         this.velocidade = velocidade;
+        this.flip=false;
     }
 
     update(secondsPassed, context) {
@@ -13,12 +14,13 @@ export class lutadores extends Sprite {
         const frameWidth = (this.image.width / this.framesMax) * this.scale;
         if (this.position.x > context.canvas.width - frameWidth || this.position.x < 0) {
             this.velocidade = -this.velocidade;
+            this.flip = this.velocidade < 0; // vira o sprite conforme a direção
         }
 
         super.update(secondsPassed, context);
     }
 
     draw(context) {
-        super.draw(context);
+        super.draw(context,this.flip);
     }
 }
