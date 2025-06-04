@@ -1,5 +1,6 @@
 import { principalCharacter } from "./entidades/fighters/principalCharacter.js";
 //import { Lingui } from "./entidades/fighters/lingui.js"
+import { Sprite } from "./entidades/Sprite.js";
 import { Cenario } from "./entidades/cenario.js";
 
 const janelaDoJogo = {
@@ -13,11 +14,15 @@ window.addEventListener('load', function(){
     canvas.width = janelaDoJogo.WIDTH;
     canvas.height = janelaDoJogo.HEIGHT;
 
+    const player = new principalCharacter({
+        position: {x:100, y:300}
+    })
+
     const entidades = [
         new Cenario(),
-        new principalCharacter(190,600, 300),
-        //new Lingui(80,600, -300),
+        player
     ];
+
     let previousTime = 0;
     let secondsPassed = 0;
 

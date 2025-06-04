@@ -1,19 +1,21 @@
-export class lutadores {
-    constructor(nome,x,y,velocidade){
+import { Sprite } from "../Sprite.js";
+
+export class lutadores extends Sprite {
+    constructor({nome, position, imageSrc, scale = 1, framesMax = 1, offset = { x: 0, y: 0 }, velocidade = 100}){
+        super({ position, imageSrc, scale, framesMax, offset})
+
         this.nome = nome;
-        this.image = new Image();
-        this.posicao = {x, y};
         this.velocidade = velocidade;
     }
     update(secondsPassed, context){
-        this.posicao.x += this.velocidade * secondsPassed;
+        this.position.x += this.velocidade * secondsPassed;
 
-        if(this.posicao.x > context.canvas.width - this.image.width || this.posicao.x < 0){
+        if(this.position.x > context.canvas.width - this.image.width || this.position.x < 0){
             this.velocidade = -this.velocidade;
         }
     }
 
     draw(context){
-        context.drawImage(this.image, this.posicao.x, this.posicao.y);
+        context.drawImage(this.image, this.position.x, this.position.y);
     }
 }
