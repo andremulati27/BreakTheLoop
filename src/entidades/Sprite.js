@@ -27,7 +27,7 @@ export class Sprite {
             (this.image.width / this.framesMax) * this.scale,
             this.image.height * this.scale
         );
-    }
+    }s
 
     update(secondsPassed, context) {
         this.draw(context);
