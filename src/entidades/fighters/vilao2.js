@@ -1,5 +1,6 @@
 import { lutadores } from "./Lutadores.js";
 
+
 export class Vilao2 extends lutadores {
     constructor({ position, velocidade }) {
         super({

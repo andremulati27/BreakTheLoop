@@ -2,7 +2,6 @@ export class Cenario {
     constructor() {
         this.image = document.querySelector('img[alt="background"]');
     }
-
     update() {
         // Cenario estático - nada a atualizar por enquanto
     }

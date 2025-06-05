@@ -16,14 +16,12 @@ window.addEventListener('load', function () {
     const vilao2 = new Vilao2({ // ✅ Instância do vilão
         position: { x: canvas.width -500, y: 450 },
         velocidade: -100
-    });
 
     const entidades = [
         new Cenario(),
         player,
         vilao2 // ✅ Adicionado ao array de entidades
     ];
-
     let previousTime = 0;
 
     function frame(currentTime) {
@@ -45,3 +43,4 @@ window.addEventListener('load', function () {
 
     window.requestAnimationFrame(frame);
 });
+
