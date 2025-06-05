@@ -16,7 +16,6 @@ window.addEventListener('load', function() {
         new Cenario(),
         player
     ];
-
     let previousTime = 0;
 
     function frame(currentTime) {
