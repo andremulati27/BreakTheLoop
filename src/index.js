@@ -9,6 +9,7 @@ window.addEventListener('load', function() {
     canvas.height = window.innerHeight;
 
     const player = new principalCharacter({
+
         position: { x: 200, y: 350 }
     });
 
@@ -37,3 +38,4 @@ window.addEventListener('load', function() {
 
     window.requestAnimationFrame(frame);
 });
+
