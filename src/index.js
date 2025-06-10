@@ -200,6 +200,24 @@ function frame(currentTime) {
     }
   }, 200)
 
+
+   // ========================================
+  // VERIFICAÇÃO DE MORTE DE ENTIDADES
+  // ========================================
+  // Filtra entidades mortas do array
+  entidades = entidades.filter((entidade) => {
+    // Se a entidade é o vilão e sua animação de morte terminou, remove-o
+    if (entidade === vilao2 && vilao2.isDead && vilao2.deathAnimationFinished) {
+      //alert
+      console.log("🎉 Vilão 2 derrotado e animação de morte concluída! Removendo do jogo.")
+      // Aqui você pode adicionar lógica de fim de jogo/vitória
+      // cancelAnimationFrame(requestAnimationFrame(frame)); // Para o loop
+      // document.getElementById("victory-screen").style.display = "flex";
+      return false // Remove a entidade
+    }
+    // Se a entidade não é o vilão, ou se o vilão ainda está vivo/animando a morte, mantém
+    return true
+  })
   // ========================================
   // ATUALIZAÇÃO DE TODAS AS ENTIDADES
   // ========================================
