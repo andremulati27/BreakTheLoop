@@ -37,6 +37,10 @@ export class Vilao2 extends lutadores {
         imageSrc: "../../../images/Homeless_1/Jump.png",
         framesMax: 16, // Sprite de pulo com 16 frames
       },
+      dead: {
+        imageSrc: "../../../images/Homeless_1/Dead.png",
+        framesMax: 4, // Sprite de morte com 4 frames
+      },
     }
 
     // Pré-carrega todas as imagens das sprites para evitar lag durante o jogo

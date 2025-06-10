@@ -200,6 +200,34 @@ function frame(currentTime) {
     }
   }, 200)
 
+
+
+  
+  // ========================================
+  // VERIFICAÇÃO DE MORTE DE ENTIDADES
+  // ========================================
+  // Filtra entidades mortas do array
+  
+  entidades = entidades.filter((entidade) => {
+    // Assumindo que apenas personagens (player, vilao2) têm 'health'
+    if (entidade.health !== undefined && entidade.health <= 0) {
+      
+      // Opcional: Adicionar uma animação de morte ou efeito aqui
+      console.log(`${entidade.constructor.name} foi derrotado!`)
+      
+      // Se for o vilão, você pode adicionar lógica de fim de jogo/vitória aqui
+      if (entidade === vilao2) {
+        console.log("🎉 Vilão 2 derrotado! Você venceu!")
+        // Exemplo: parar o loop do jogo ou mostrar uma tela de vitória
+        // cancelAnimationFrame(requestAnimationFrame(frame)); // Para o loop
+        // document.getElementById("victory-screen").style.display = "flex";
+      }
+      return false // Remove a entidade morta do array
+    }
+    return true // Mantém a entidade viva
+  })
+
+
   // ========================================
   // ATUALIZAÇÃO DE TODAS AS ENTIDADES
   // ========================================
